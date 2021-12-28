@@ -28,7 +28,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div class="text-right py-4" style={{width:'50%'}}>© 2020 Copyright:
+                <div class=" text-align-right py-4" style={{width:'50%'}}>© 2020 Copyright:
                     <a href="https://gmail.com/"> jabidabdul72@gmail.com</a>
                 </div>
             </footer>

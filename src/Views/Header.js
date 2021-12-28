@@ -6,20 +6,21 @@ const Header = () => {
     const navigate = useNavigate();
     const [isLogin, userInfo, setUserInfo, setIsLogin] = React.useContext(LoginContext);
     const [isUser, setIsUser] = React.useState(false);
-    const [userData, setUserData] = React.useState();
-    
+    const [userData, setUserData] = React.useState({});
     React.useEffect(async()=>{
-        localStorage.getItem("user_isLogin") && setIsUser(localStorage.getItem("user_isLogin"))
-        localStorage.getItem("user_isLogin") && setUserData(JSON.parse(localStorage.getItem("user")))
-        console.log(isUser, isLogin, userData)
-         
-    },[])
+        if(localStorage.getItem("user_isLogin")){
+            setIsUser(localStorage.getItem("user_isLogin"));
+            setIsLogin(localStorage.getItem("user_isLogin"));
+            setUserData(JSON.parse(localStorage.getItem("user")));
+        }  
+    },[isLogin,userInfo])
 
     const handleLogout=()=>{
         localStorage.removeItem('user_isLogin')
         localStorage.removeItem('user')
         setIsLogin(false)
         setIsUser(false)
+        setUserData({})
         navigate('/home')
         alert('Thankyou, Visit again')
     }
@@ -27,8 +28,9 @@ const Header = () => {
     return (
         <div>
           <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{height:'65px'}}>
-            <a class="navbar-brand" href="#" style={{marginLeft:'10px'}}></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#" style={{marginLeft:'10px'}}>{userData.fullName}</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -53,6 +55,7 @@ const Header = () => {
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0" style={{width:'500px',display:'flex',marginRight:'20px'}}>
+                    {(isLogin || isUser) && <a href="/cart" ><i style={{marginRight:'10px',marginTop:'10px'}} class="fas fa-shopping-cart fa-lg me-3"></i></a>}
                 <input class="form-control" type="search" placeholder="Search" aria-label="Search" style={{marginRight:'10px'}}/>
                 <button class="btn btn-outline-success" type="submit" style={{marginRight:'10px'}}>Search</button>
                 {(isLogin || isUser) && <button type="button" class="btn btn-primary" onClick={handleLogout}>Logout</button>}

@@ -40,10 +40,9 @@ const Login = () => {
                   setIsLogin(true)
                   setUserInfo(response.data)
                   navigate('/dashboard')
-                //   console.log(response.data)
                   localStorage.setItem('user', JSON.stringify(response.data));
                   localStorage.setItem('user_isLogin', true);
-                  alert('You are Logged in, Thankyou')
+                  alert('You are Logged in, Welcome')
               }
               else{
                   alert("You are not registered")

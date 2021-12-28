@@ -1,8 +1,10 @@
 import React from 'react'
 import {Routes, Route, Link} from 'react-router-dom'
+import Cart from './Components/Cart'
 import Dashboard from './Components/Dashboard'
 import Home from './Components/Home'
 import Login from './Components/Login'
+import Product from './Components/Product'
 import { SignUp } from './Components/SignUp'
 
 const RoutePages = () => {
@@ -12,8 +14,11 @@ const RoutePages = () => {
                 <Route path="/home" element={<Home />} />
                 <Route path="login" element={<Login/>} />
                 <Route path="signup" element={<SignUp/>} />
-                <Route path="dashboard" element={<Dashboard />} />
-                <Route path="*" element={<h2>Page Not Found</h2>} />
+                <Route path="cart" element={<Cart/>} />
+                <Route path="dashboard" element={<Dashboard />}>
+                    <Route path=":productid" element={<Cart />} />
+                </Route>
+                <Route path="*" element={<Home />} />
             </Routes>
         </div>
     )
