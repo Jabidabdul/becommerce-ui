@@ -1,37 +1,56 @@
 import React from 'react'
+import './Footer.css'
 
 const Footer = () => {
     return (
 
-            <footer class="d-flex flex-col page-footer font-small cyan darken-3">
-                <div class="container" style={{marginLeft:'5%', width:'100%'}}>
-                    <div class="col-md py-4">
-                        <div class="mb-5">
-                        <a class="fb-ic" style={{marginRight:'15px'}}>
-                            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3"></i>
-                        </a>
-                        <a class="tw-ic" style={{marginRight:'15px'}}>
-                            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3"></i>
-                        </a>
-                        <a class="gplus-ic" style={{marginRight:'15px'}}>
-                            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3"></i>
-                        </a>
-                        <a class="li-ic" style={{marginRight:'15px'}}>
-                            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3"></i>
-                        </a>
-                        <a class="ins-ic" style={{marginRight:'15px'}}>
-                            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3"></i>
-                        </a>
-                        <a class="pin-ic" style={{marginRight:'15px'}}>
-                            <i class="fab fa-pinterest fa-lg white-text"> </i>
-                        </a>
-                        </div>
-                    </div>
+            <footer class="footer-distributed" style={{position:'relative' , left:'0', bottom:'0'}}>
+                <div class="footer-left">
+                    <img src="img/logo.png" />
+                    <h3>About<span>BeCommerce</span></h3>
+
+                    <p class="footer-links">
+                        <a href="#" style={{margin:'3px'}}>Home</a>
+                        |
+                        <a href="#" style={{margin:'3px'}}>Blog</a>
+                        |
+                        <a href="#" style={{margin:'3px'}}>About</a>
+                        |
+                        <a href="#" style={{margin:'3px'}}>Contact</a>
+                    </p>
+                    <p class="footer-company-name">© 2021 BeCommerce Pvt. Ltd.</p>
                 </div>
-                <div class=" text-align-right py-4" style={{width:'50%'}}>© 2020 Copyright:
-                    <a href="https://gmail.com/"> jabidabdul72@gmail.com</a>
-                </div>
-            </footer>
+
+			<div class="footer-center">
+				<div>
+					<i class="fa fa-map-marker"></i>
+					  <p><span>309 - Rupa Solitaire,
+						 Bldg. No. A - 1, Sector - 1</span>
+						Mahape, Navi Mumbai - 400710</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+91 22-27782183</p>
+				</div>
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="http://gmail.com">support@becommerce.com</a></p>
+				</div>
+			</div>
+			<div class="footer-right">
+				<p class="footer-company-about">
+					<span>About the company</span>
+					We offer training and skill building courses across Technology, Design, Management, Science and Humanities.</p>
+				<div class="footer-icons">
+					<a href="#"><i class="fab fa-facebook"></i></a>
+					<a href="#"><i class="fab fa-twitter"></i></a>
+					<a href="#"><i class="fab fa-instagram"></i></a>
+					<a href="#"><i class="fab fa-linkedin"></i></a>
+					<a href="#"><i class="fab fa-youtube"></i></a>
+				</div>
+			</div>
+		</footer>
 
     )
 }

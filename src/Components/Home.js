@@ -16,7 +16,7 @@ const Home = () => {
     },[])
 
     return (
-        <div style={{ height:'80vh'}}>
+        <div>
             <div style={{ width:"100%",display:"flex",flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
             <div style={{ textAlign:'center',width:"300px", marginTop:'10%'}}>
             <div class="masthead-heading text-uppercase">Welcome To My Portfolio</div>

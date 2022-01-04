@@ -1,8 +1,10 @@
 import React from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router'
 
 export const SignUp = () => {
 
+    const navigate = useNavigate();
     const [userData , setUserData] = React.useState({
         fullName : '',
         userName : '',
@@ -35,7 +37,7 @@ export const SignUp = () => {
         }
         var config = {
             method: 'post',
-            url: 'http://localhost:3001/posts/signup',
+            url: 'https://becommerce-api.onrender.com/posts/signup',
             headers: { 
               'Content-Type': 'application/json'
             },
@@ -50,6 +52,7 @@ export const SignUp = () => {
                 return
             }
             alert("Registration Successful") 
+            navigate('/login')
           })
           .catch(function (error) {
             console.log(error);
@@ -57,8 +60,9 @@ export const SignUp = () => {
     }
 
     return (
+      <div>
         <div class="d-flex flex-row justify-content-center" style={{marginTop:'10px'}}>
-            <div class="card text-black col-7" style={{borderRadius: '25px'}}>
+            <div class="card text-black col-8" style={{borderRadius: '25px'}}>
             <div class="card-body md-4">
               <div class="row justify-content-center">
                 <div class="col-xl-5 order-2 order-lg-1">
@@ -114,17 +118,25 @@ export const SignUp = () => {
                       </label>
                     </div>
 
-                    <div class="d-flex justify-content-center">
-                      <button type="submit" class="btn btn-primary" onClick={handleSubmit}>Register</button>
+                    <div class="d-flex flex-col justify-content-center">
+                      <button type="submit" class="btn btn-primary" onClick={handleSubmit} style={{ margin:'10px', textAlign:'center'}}>Register</button>
+                      {/* <div class="divider d-flex align-items-center my-4">
+                            <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+                        </div> */}
+                      <butoon class="btn btn-success" onClick={()=>navigate('/login')} style={{ margin:'10px', textAlign:'center',width:'100px'}}>Login</butoon>
+                    
                     </div>
                   </form>
                 </div>
-                <div class="col d-flex align-items-center order-1 order-lg">
+                <div class="col d-flex flex-col align-items-center order-1 order-lg">
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid" alt="Sample image" />
+
                 </div>
               </div>
             </div>
           </div>
          </div>
+      </div>
+        
     )
 }
