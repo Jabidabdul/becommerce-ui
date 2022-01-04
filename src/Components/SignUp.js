@@ -37,7 +37,7 @@ export const SignUp = () => {
         }
         var config = {
             method: 'post',
-            url: 'https://becommerce-api.onrender.com/posts/signup',
+            url: `${process.env.PORT}/posts/signup`,
             headers: { 
               'Content-Type': 'application/json'
             },
