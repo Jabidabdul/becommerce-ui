@@ -8,11 +8,15 @@ import './Dashboard.css'
 
 const Dashboard = () => {
     const [isLogin, userInfo, setUserInfo, setIsLogin] = React.useContext(LoginContext);
-    
+    const navigate = useNavigate();
     React.useEffect(()=>{
         if(localStorage.getItem("user_isLogin")){
             setIsLogin(true)
             setUserInfo(JSON.parse(localStorage.getItem("user")))
+        }
+        if(!localStorage.getItem("user_isLogin")){
+            alert("Oops you are not logged in yet")
+            navigate("/home")
         }
     },[])
     return (

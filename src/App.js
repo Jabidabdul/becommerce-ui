@@ -11,7 +11,6 @@ function App() {
     <div className="App">
       <LoginProvider>
         <Header />
-        <NavFooter />
         <RoutePages />
         <Footer /> 
       </LoginProvider>

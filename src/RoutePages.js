@@ -24,8 +24,7 @@ const RoutePages = () => {
                 <Route path="dashboard/videocall" element={<VideoCall />} />
                 <Route path="dashboard/products" element={<Shopping />} />
                 <Route path="dashboard/album" element={<Album />} />
-                <Route path="dashboard/products:productid" element={<Cart />} />
-
+                <Route path="dashboard/products:productid" element={<Cart />}/>
                 <Route path="*" element={<Home />} />
             </Routes>
         </div>

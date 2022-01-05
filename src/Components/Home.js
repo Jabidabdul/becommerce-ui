@@ -12,7 +12,11 @@ const Home = () => {
             setIsLogin(true)
             setUserInfo(JSON.parse(localStorage.getItem("user")))
             navigate("/dashboard")
+        }else{
+            setIsLogin(false)
+            setUserInfo({})
         }
+        console.log(isLogin, ' ', userInfo);
     },[])
 
     return (

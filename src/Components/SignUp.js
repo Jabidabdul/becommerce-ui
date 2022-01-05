@@ -37,13 +37,12 @@ export const SignUp = () => {
         }
         var config = {
             method: 'post',
-            url: `${process.env.PORT}/posts/signup`,
+            url: `${process.env.REACT_APP_PORT}/posts/signup`,
             headers: { 
               'Content-Type': 'application/json'
             },
             data : userData
           };
-          
           axios(config)
           .then(function (response) {
             console.log((response.data));

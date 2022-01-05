@@ -28,9 +28,10 @@ const Login = () => {
             alert('Fields are missing')
             return
         }
+        console.log(process.env.REACT_APP_PORT)
         var config = {
             method: 'post',
-            url: `${process.env.PORT}/posts/login`,
+            url: `${process.env.REACT_APP_PORT}/posts/login`,
             headers: { 
               'Content-Type': 'application/json'
             },
@@ -62,7 +63,6 @@ const Login = () => {
 
     return (
         <section class="vh-90 my-3">
-            
             <div class="card container col-10" style={{borderRadius: '25px'}}>
                 <div class="container py-5" style={{borderRadius: '25px'}}>
                     <div class="row d-flex align-items-center justify-content-center h-100">
