@@ -20,7 +20,7 @@ const Dashboard = () => {
         }
     },[])
     return (
-        <div style={{width:'100%', height:'100vh', display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+        <div style={{width:'100%', height:'100vh', display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center', flexWrap:'wrap'}}>
             <div  id="carddiv"><a id="product" href="dashboard/products" class="card">Product</a></div>
            <div id="carddiv"><a id="album" href="dashboard/album" class="card">Album</a></div> 
             <div id="carddiv"><a id="product" href="dashboard/videocall" class="card">Video Call</a></div>

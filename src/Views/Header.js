@@ -33,12 +33,12 @@ const Header = () => {
     },[isLogin])
 
 
-  React.useEffect(() => {
+  React.useEffect(async() => {
     const changeWidth = () => {
       setScreenWidth(window.innerWidth);
     }
 
-    window.addEventListener('resize', changeWidth)
+    await window.addEventListener('resize', changeWidth)
 
     return () => {
         window.removeEventListener('resize', changeWidth)
@@ -90,7 +90,7 @@ const Header = () => {
                     <li>{userInfo &&  userInfo.email}</li>
                     <div style={{display:'flex'}}>
                         <li id="profile"><a  onClick={handleProfile}>Profile</a></li> 
-                        <li id="logout"><a  onClick={handleLogout} href="/home">Logout</a></li> 
+                        <li id="logout"><a  onClick={handleLogout}>Logout</a></li> 
                     </div>
                 </ul>
             </nav>
@@ -114,7 +114,7 @@ const Header = () => {
                                     {(isLogin && userInfo) ? 
                                     <div style={{display:'flex',fontSize:'15px', zIndex:1}}>
                                         <li id="profile"><a  onClick={handleProfile}>Profile</a></li> 
-                                        <li id="logout"><a  onClick={handleLogout} href="/home">Logout</a></li> 
+                                        <li id="logout"><a  onClick={handleLogout}>Logout</a></li> 
                                     </div>
                                      : 
                                     <div style={{display:'flex', fontSize:'10px'}}>
