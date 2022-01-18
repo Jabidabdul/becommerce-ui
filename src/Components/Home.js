@@ -20,15 +20,14 @@ const Home = () => {
     },[])
 
     return (
-        <div>
+        <div style={{height:'70vh'}}>
             <div style={{ width:"100%",display:"flex",flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
             <div style={{ textAlign:'center',width:"300px", marginTop:'10%'}}>
             <div class="masthead-heading text-uppercase">Welcome To My Portfolio</div>
                 <div class="masthead-heading">I am very much excited to give you best experience</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services" style={{width:"100%", margin:'10px'}}>Tell Me More</a>
-
-                <butoon class="btn btn-success" onClick={()=>navigate('/login')} style={{width:"100%", margin:'10px'}}>Login</butoon>
-                <butoon class="btn btn-fail" onClick={()=>navigate('/signup')} style={{width:"100%", margin:'10px'}}>Sign Up</butoon>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#services" style={{width:"100%", marginTop:'10px'}}>Tell Me More</a>
+                <butoon class="btn btn-success" onClick={()=>navigate('/login')} style={{width:"100%", marginTop:'10px'}}>Login</butoon>
+                <butoon class="btn btn-fail" onClick={()=>navigate('/signup')} style={{width:"100%", marginTop:'10px'}}>Sign Up</butoon>
             </div>      
         </div>
         </div>

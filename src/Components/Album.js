@@ -42,7 +42,7 @@ const Album = () => {
                 <Loader type="Circles" color="#00BFFF" height={80} width={80}/>
                 </div>
             :
-             <div style={{display:'flex',flexDirection:'row', flexWrap:'wrap'}}>
+             <div style={{display:'flex',flexDirection:'row', flexWrap:'wrap',justifyContent:'center', alignItems:'center'}}>
                 {Object.entries(data).map((item,i)=>{
                     console.log(item[1])
                     return( 

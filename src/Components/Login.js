@@ -47,10 +47,10 @@ const Login = () => {
               else if(response.data){
                   setIsLogin(true)
                   setUserInfo(response.data)
-                  navigate('/dashboard')
                   localStorage.setItem('user', JSON.stringify(response.data));
                   localStorage.setItem('user_isLogin', true);
-                  alert('You are Logged in, Welcome')
+                //   alert('You are Logged in, Welcome')
+                  navigate('/dashboard')
               }
               else{
                   alert("Email or Password doesn't match")

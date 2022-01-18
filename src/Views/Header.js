@@ -10,8 +10,6 @@ const Header = () => {
     const [toggleMenu, setToggleMenu] = React.useState(false)
     const [screenWidth, setScreenWidth] = React.useState(window.innerWidth)
     const [isLogin, userInfo, setUserInfo, setIsLogin] = React.useContext(LoginContext);
-    const [isUser, setIsUser] = React.useState(false);
-    const [userData, setUserData] = React.useState({});
     
     React.useEffect(async()=>{
         console.log(isToggleUser)
@@ -19,15 +17,11 @@ const Header = () => {
         setIsToggle(false);
         setIsToggleUser(false)
         if(localStorage.getItem("user_isLogin")){
-            setIsUser(localStorage.getItem("user_isLogin"));
             setIsLogin(localStorage.getItem("user_isLogin"));
-            setUserData(JSON.parse(localStorage.getItem("user")));
             setUserInfo(JSON.parse(localStorage.getItem("user")));
         }  
         else{
-            setIsUser(false)
             setIsLogin(false)
-            setUserData({})
             setUserInfo({})
         }
     },[isLogin])
@@ -38,13 +32,28 @@ const Header = () => {
       setScreenWidth(window.innerWidth);
     }
 
-    await window.addEventListener('resize', changeWidth)
+    window.addEventListener('resize', changeWidth)
 
     return () => {
         window.removeEventListener('resize', changeWidth)
     }
 
   }, [window.innerWidth])
+
+  React.useEffect(()=>{
+      console.log("toggle menu function is called", toggleMenu)
+    const hideMenu=()=>{
+        if(toggleMenu)
+            setIsToggleUser(false)
+    }
+    window.addEventListener('click', hideMenu);
+
+    return ()=>{
+    window.removeEventListener('click', hideMenu);
+
+    }
+
+  },[toggleMenu])
 
   const toggleNav = () => {
     setToggleMenu(!toggleMenu)
@@ -54,9 +63,8 @@ const Header = () => {
     const handleLogout=()=>{
         localStorage.removeItem('user_isLogin')
         localStorage.removeItem('user')
-        setIsUser(false)
-        setUserData({})
-        setIsUser({})
+        setIsLogin(false);
+        setUserInfo({})
         navigate('/home')
         alert('Thankyou, Visit again')
     }
