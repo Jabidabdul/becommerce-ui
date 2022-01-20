@@ -12,7 +12,7 @@ const Header = () => {
     const [isLogin, userInfo, setUserInfo, setIsLogin] = React.useContext(LoginContext);
     
     React.useEffect(async()=>{
-        console.log(isToggleUser)
+        // console.log(isToggleUser)
         setToggleMenu(false)
         setIsToggle(false);
         setIsToggleUser(false)
@@ -41,7 +41,7 @@ const Header = () => {
   }, [window.innerWidth])
 
   React.useEffect(()=>{
-      console.log("toggle menu function is called", toggleMenu)
+    //   console.log("toggle menu function is called", toggleMenu)
     const hideMenu=()=>{
         if(toggleMenu)
             setIsToggleUser(false)

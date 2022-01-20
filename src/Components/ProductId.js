@@ -19,10 +19,11 @@ const ProductId = () => {
         }
         if(isLogin){
             axios
-          .get('https://fakestoreapi.com/products')
+          .get(`https://fakestoreapi.com/products/${id}`)
           .then(res=>{
+              console.log(res.data)
               setIsDataFetch(true)
-              setDataForId(res.data[id])
+              setDataForId(res.data)
             })
           .catch(err=>{
               console.log(err)

@@ -15,8 +15,6 @@ import Resume from './Components/Resume'
 
 const RoutePages = () => {
     const [isLogin, userInfo, setUserInfo, setIsLogin] = React.useContext(LoginContext);
-    console.log(isLogin)
-
   
     return(
         <div>
