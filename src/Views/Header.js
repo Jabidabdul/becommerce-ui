@@ -72,7 +72,7 @@ const Header = () => {
         setIsToggleUser(!isToggleUser)
     }
     const handleProfile=()=>{
-        navigate('/dashboard/products')
+        navigate('/dashboard/resume')
     }
 
 
