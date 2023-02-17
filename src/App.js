@@ -5,13 +5,15 @@ import RoutePages from "./RoutePages";
 import Footer from "./Views/Footer";
 import Header from "./Views/Header";
 import Demo from "./Components/joyin-components/demo";
+import TableComponent from "./Components/joyin-components/DataInTableFormat";
 
 function App() {
   return (
     <div className="App">
       <LoginProvider>
         <Header />
-        <Demo />
+        <TableComponent/>
+        {/* <Demo /> */}
         {/* <RoutePages /> */}
         <Footer />
       </LoginProvider>
