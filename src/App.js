@@ -7,6 +7,7 @@ import Header from "./Views/Header";
 import Demo from "./Components/joyin-components/demo";
 import TableComponent from "./Components/joyin-components/DataInTableFormat";
 import Component1 from "./mumin/UserContext";
+import FetchDataTable from "./Components/habib-component/project02/FetchDataTable";
 
 function App() {
   return (
@@ -14,10 +15,11 @@ function App() {
       <LoginProvider>
         <Header />
         {/* <TableComponent/> */}
-        <Component1 />
+        {/* <Component1 /> */}
+        <FetchDataTable />
         {/* <Demo /> */}
         {/* <RoutePages /> */}
-        <Footer />
+        {/* <Footer /> */}
       </LoginProvider>
     </div>
   );
