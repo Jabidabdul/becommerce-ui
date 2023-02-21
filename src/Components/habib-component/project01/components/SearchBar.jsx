@@ -1,20 +1,28 @@
 import React, { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import "./style.css";
 
 const SearchBar = (props) => {
   const { data, setData } = props;
 
-  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
+
+  const [searchTerm, setSearchTerm] = useState("");
   const handleChange = (e) => {
-    setSearch(e.target.value);
+    setSearchTerm(e.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const filteredData = data.filter((item) =>
-      item.title.toLowerCase().includes(search.toLowerCase())
-    );
-    setData(filteredData);
+    if (searchTerm) {
+      const filteredData = data.filter((item) =>
+        item.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setData(filteredData);
+      navigate(`/search/${searchTerm}`);
+      searchTerm(``);
+    }
   };
   return (
     <div className="searchBar">
@@ -22,7 +30,7 @@ const SearchBar = (props) => {
         <input
           type="text"
           placeholder="Search"
-          value={search}
+          value={searchTerm}
           onChange={handleChange}
         />
         <button type="submit">Search</button>
