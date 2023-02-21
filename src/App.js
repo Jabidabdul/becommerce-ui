@@ -8,6 +8,7 @@ import Demo from "./Components/joyin-components/demo";
 import TableComponent from "./Components/joyin-components/DataInTableFormat";
 import Component1 from "./mumin/UserContext";
 import FetchDataTable from "./Components/habib-component/project02/FetchDataTable";
+import FetchData from "./Components/habib-component/project01/FetchData";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <Header />
         {/* <TableComponent/> */}
         {/* <Component1 /> */}
-        <FetchDataTable />
+        {/* <FetchDataTable /> */}
+        <FetchData />
         {/* <Demo /> */}
         {/* <RoutePages /> */}
         {/* <Footer /> */}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./style.css"
+import SearchBar from "./components/SearchBar";
 
 const API_URL = "https://dummyjson.com/products";
 
@@ -24,6 +25,10 @@ const FetchData = () => {
   return (
     <div className="container-fluid bg-dark py-2">
       <h1>Products</h1>
+      <hr />
+      <div className="search">
+        <SearchBar data={data} setData={setData} />
+      </div>
       <div className="card">
         {data.map((item) => (
           <div className="card" key={item.id} style={{ width: "18rem" }}>
