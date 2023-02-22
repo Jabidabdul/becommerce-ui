@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
+import SearchBar from "../components/SearchBar";
 import "./style.css";
 
 const Single = () => {
@@ -30,6 +31,9 @@ const Single = () => {
 
   return (
     <div className="single">
+      <div className="singleSearch">
+        <SearchBar />
+      </div>
       {data.length > 0 ? (
       data.map((product, index) => (
         <div className="single" key={index}>

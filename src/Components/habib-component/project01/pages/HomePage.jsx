@@ -4,7 +4,7 @@ import "./style.css";
 const HomePage = () => {
   return (
     <div className="home">
-      <SearchBar />
+        <SearchBar />
     </div>
   );
 };

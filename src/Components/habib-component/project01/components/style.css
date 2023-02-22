@@ -1,10 +1,5 @@
 .searchBar{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
     gap: 10px;
-    justify-content: center;
-    align-items: center;
 }
 
 form{
