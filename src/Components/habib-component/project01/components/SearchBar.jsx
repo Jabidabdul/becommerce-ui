@@ -1,37 +1,32 @@
 import React, { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 
-const SearchBar = (props) => {
-  const { data, setData } = props;
+const SearchBar = () => {
+  const [value, setValue] = useState("");
 
   const navigate = useNavigate();
 
-
-  const [searchTerm, setSearchTerm] = useState("");
   const handleChange = (e) => {
-    setSearchTerm(e.target.value);
+    setValue(e.target.value);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (searchTerm) {
-      const filteredData = data.filter((item) =>
-        item.title.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      setData(filteredData);
-      navigate(`/search/${searchTerm}`);
-      searchTerm(``);
+    if (value) {
+      navigate(`/post/${value}`);
     }
   };
+
+  // console.log(title);
   return (
     <div className="searchBar">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Search"
-          value={searchTerm}
+          value={value}
           onChange={handleChange}
+          placeholder="search here..."
         />
         <button type="submit">Search</button>
       </form>

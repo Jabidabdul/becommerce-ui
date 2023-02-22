@@ -11,7 +11,7 @@ const Header = () => {
     const [screenWidth, setScreenWidth] = React.useState(window.innerWidth)
     const [isLogin, userInfo, setUserInfo, setIsLogin] = React.useContext(LoginContext);
     
-    React.useEffect(async()=>{
+    React.useEffect(()=>{
         // console.log(isToggleUser)
         setToggleMenu(false)
         setIsToggle(false);

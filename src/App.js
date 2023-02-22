@@ -1,33 +1,43 @@
 import "./App.css";
-import NavFooter from "./Components/NavFooter";
 import { LoginProvider } from "./ContextApi/LoginContext";
-import RoutePages from "./RoutePages";
 import Footer from "./Views/Footer";
 import Header from "./Views/Header";
-import Demo from "./Components/joyin-components/demo";
-import TableComponent from "./Components/joyin-components/DataInTableFormat";
-import Component1 from "./mumin/UserContext";
-import FetchDataTable from "./Components/habib-component/project02/FetchDataTable";
-import FetchData from "./Components/habib-component/project01/FetchData";
-import { BrowserRouter, Switch, Route, Link, Router, Routes } from "react-router-dom";
+import Home from "../src/";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import HomePage from "./Components/habib-component/project01/pages/HomePage";
+import Single from "./Components/habib-component/project01/pages/Single";
+
+const Layout = () => {
+  return (
+    <>
+      <Header />
+      <Outlet />
+    </>
+  );
+};
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/post/:id",
+        element: <Single />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
     <div className="App">
       <LoginProvider>
-        <Header />
-        <Routes>
-          <Route path="search/:searchTerm" exact element={<FetchData />} />
-          </Routes>
-        
-        
-        {/* <TableComponent/> */}
-        {/* <Component1 /> */}
-        {/* <FetchDataTable /> */}
-        
-        {/* <Demo /> */}
-        {/* <RoutePages /> */}
-        {/* <Footer /> */}
+        <RouterProvider router={router} />
       </LoginProvider>
     </div>
   );
