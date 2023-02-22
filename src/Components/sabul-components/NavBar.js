@@ -11,12 +11,13 @@ export const NavBar = ()=> {
         }
     }
     return (
-      <nav>
+      <nav className='primary-nav'>
         {/* <Link to='/'>Home</Link>
         <Link to='/About'>About</Link> */}
 
         <NavLink style={navLinkStyles} to='/'>Home</NavLink>
         <NavLink style={navLinkStyles} to='/About'>About</NavLink>
+        <NavLink style={navLinkStyles} to='/Products'>Products</NavLink>
       </nav>
 
     )
