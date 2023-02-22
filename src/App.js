@@ -1,5 +1,6 @@
 import React from 'react';
-import './App.css';
+import './App.css'
+import SearchBar from './Components/sabul-components/SeacrhBar';
 import {Routes , Route} from 'react-router-dom';
 import { Home } from './Components/sabul-components/Home';
 import {About} from './Components/sabul-components/About';
@@ -24,7 +25,14 @@ function App() {
       <Route path='FeaturedProducts' element={<FeaturedProduct/>} />
       <Route path='NewProducts' element={<NewProduct/>} />
     </Route>
-   </Routes></>
+   </Routes>
+
+   {/* <div className='Main-div'>
+   <h1>Plato Search</h1>
+   <input type='search' placeholder='Search..' className='input' ></input><br></br>
+   <button className='Button'>Search</button>
+   </div> */}
+</>
   );
 }
 
