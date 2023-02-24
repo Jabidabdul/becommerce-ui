@@ -1,0 +1,55 @@
+.app{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+}
+
+.second{
+    display: none;
+}
+.third{
+    display: none;
+}
+.fourth{
+    display: none;
+}
+
+@media only screen and (max-width: 1080px){
+    .first{
+        display: none;
+    }
+    .second{
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .first{
+        display: none;
+    }
+    .second{
+        display: none;
+    }
+    .third{
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .first{
+        display: none;
+    }
+    .second{
+        display: none;
+    }
+    .third{
+        display: none;
+    }
+    .fourth{
+        display: block;
+    }
+}
