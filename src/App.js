@@ -1,18 +1,23 @@
-import React from 'react';
-import './App.css';
-import {Routes , Route} from 'react-router-dom';
-import { Home } from './Components/sabul-components/Home';
-import {About} from './Components/sabul-components/About';
-import {NavBar} from './Components/sabul-components/NavBar';
+import "./App.css";
+import NavFooter from "./Components/NavFooter";
+import { LoginProvider } from "./ContextApi/LoginContext";
+import RoutePages from "./RoutePages";
+import Footer from "./Views/Footer";
+import Header from "./Views/Header";
+import Demo from "./Components/joyin-components/demo";
+import TableComponent from "./Components/joyin-components/DataInTableFormat";
 
 function App() {
   return (
-    <>
-    <NavBar/>
-    <Routes>
-    <Route path='/' element={<Home/>}/>
-    <Route path='about' element={<About/>}/>
-   </Routes></>
+    <div className="App">
+      <LoginProvider>
+        <Header />
+        <TableComponent/>
+        {/* <Demo /> */}
+        {/* <RoutePages /> */}
+        <Footer />
+      </LoginProvider>
+    </div>
   );
 }
 
