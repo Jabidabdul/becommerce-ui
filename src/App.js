@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css'
-import SearchBar from './Components/sabul-components/SeacrhBar';
+// import SearchBar from './Components/sabul-components/SeacrhBar';
 import {Routes , Route} from 'react-router-dom';
 import { Home } from './Components/sabul-components/Home';
 import {About} from './Components/sabul-components/About';
@@ -10,6 +10,7 @@ import { NoMatch } from './Components/sabul-components/NoMatch';
 import { Products } from './Components/sabul-components/Products';
 import { FeaturedProduct } from './Components/sabul-components/FeaturedProduct';
 import { NewProduct } from './Components/sabul-components/NewProduct';
+import {Index, Responsive} from './Components/sabul-components/Task-02/Index';
 
 function App() {
   return (
@@ -27,11 +28,8 @@ function App() {
     </Route>
    </Routes>
 
-   {/* <div className='Main-div'>
-   <h1>Plato Search</h1>
-   <input type='search' placeholder='Search..' className='input' ></input><br></br>
-   <button className='Button'>Search</button>
-   </div> */}
+{/* Responsive page */}
+    <Responsive/>
 </>
   );
 }
