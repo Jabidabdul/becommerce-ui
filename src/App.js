@@ -1,36 +1,23 @@
-import React from 'react';
-import './App.css'
-// import SearchBar from './Components/sabul-components/SeacrhBar';
-import {Routes , Route} from 'react-router-dom';
-import { Home } from './Components/sabul-components/Home';
-import {About} from './Components/sabul-components/About';
-import {NavBar} from './Components/sabul-components/NavBar';
-import { OrderSummary } from './Components/sabul-components/OrderSummary';
-import { NoMatch } from './Components/sabul-components/NoMatch';
-import { Products } from './Components/sabul-components/Products';
-import { FeaturedProduct } from './Components/sabul-components/FeaturedProduct';
-import { NewProduct } from './Components/sabul-components/NewProduct';
-import {Index, Responsive} from './Components/sabul-components/Task-02/Index';
+import "./App.css";
+import NavFooter from "./Components/NavFooter";
+import { LoginProvider } from "./ContextApi/LoginContext";
+import RoutePages from "./RoutePages";
+import Footer from "./Views/Footer";
+import Header from "./Views/Header";
+import Demo from "./Components/joyin-components/demo";
+import TableComponent from "./Components/joyin-components/DataInTableFormat";
 
 function App() {
   return (
-    <>
-    <NavBar/>
-    <Routes>
-    <Route path='/' element={<Home/>}/>
-    <Route path='about' element={<About/>}/>
-    <Route path='OrderSummary' element={<OrderSummary/>} />
-    <Route path='*' element={<NoMatch/>} />
-    <Route path='Products' element={<Products/>}>
-      <Route index element={<FeaturedProduct/>} />
-      <Route path='FeaturedProducts' element={<FeaturedProduct/>} />
-      <Route path='NewProducts' element={<NewProduct/>} />
-    </Route>
-   </Routes>
-
-{/* Responsive page */}
-    <Responsive/>
-</>
+    <div className="App">
+      <LoginProvider>
+        <Header />
+        <TableComponent/>
+        {/* <Demo /> */}
+        {/* <RoutePages /> */}
+        <Footer />
+      </LoginProvider>
+    </div>
   );
 }
 
