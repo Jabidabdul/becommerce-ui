@@ -63,11 +63,11 @@ button:hover {
   margin: -10px;
 }
 
-/* .col {
+.col {
   flex: 1;
   padding: 10px;
   box-sizing: border-box;
-} */
+}
 
 .card {
   background-color: #fff;
