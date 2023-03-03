@@ -1,0 +1,31 @@
+.mainMenus, .workSpace, .general {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  gap: 10px;
+}
+
+button {
+  width: 244px;
+  height: 56px;
+  background-color: #1b2b65;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+}
+
+span {
+  margin-left: 10px;
+}
+
+h6{
+    color: #51CBFF;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 10px;
+}

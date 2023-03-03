@@ -1,0 +1,21 @@
+.dashboard {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+}
+
+.left {
+  flex: 1;
+  background-color: #081a51;
+}
+
+.cancelIcon {
+  float: right;
+  margin-right: -15px;
+  color: darkblue;
+  cursor: pointer;
+}
+
+.right {
+  flex: 6;
+}

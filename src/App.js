@@ -1,12 +1,14 @@
 import "./App.css";
 import { LoginProvider } from "./ContextApi/LoginContext";
-import Footer from "./Views/Footer";
-import Header from "./Views/Header";
-import Home from "../src/";
+// import Footer from "./Views/Footer";
+// import Header from "./Views/Header";
+// import Home from "../src/";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import HomePage from "./Components/habib-component/project01/pages/HomePage";
-import Single from "./Components/habib-component/project01/pages/Single";
-import PageOne from "./Components/habib-component/project03/PageOne";
+import Form from "./Components/habib-component/project05/Form";
+// import HomePage from "./Components/habib-component/project01/pages/HomePage";
+// import Single from "./Components/habib-component/project01/pages/Single";
+// import PageOne from "./Components/habib-component/project03/PageOne";
+// import Dashboard from "./Components/habib-component/project04/Dashboard";
 
 const Layout = () => {
   return (
@@ -30,9 +32,17 @@ const router = createBrowserRouter([
       //   path: "/post/:id",
       //   element: <Single />,
       // },
+      // {
+      //   path: "/",
+      //   element: <PageOne />,
+      // }
+      // {
+      //   path: "/",
+      //   element: <Dashboard />,
+      // }
       {
         path: "/",
-        element: <PageOne />,
+        element: <Form />,
       }
     ],
   },
