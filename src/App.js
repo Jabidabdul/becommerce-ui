@@ -4,17 +4,19 @@ import { LoginProvider } from "./ContextApi/LoginContext";
 import RoutePages from "./RoutePages";
 import Footer from "./Views/Footer";
 import Header from "./Views/Header";
-import Demo from "./Components/joyin-components/demo";
-import TableComponent from "./Components/joyin-components/DataInTableFormat";
-import Responsive from "./Components/joyin-components/responsive-page"
+// import Demo from "./Components/joyin-components/demo";
+// import TableComponent from "./Components/joyin-components/DataInTableFormat";
+// import Responsive from "./Components/joyin-components/responsive-page"
+import Dashboard from "./Components/joyin-components/Dashboard/Dashboard";
 
 function App() {
   return (
     <div className="App">
       <LoginProvider>
         <Header />
+        <Dashboard/>
         {/* <TableComponent/> */}
-        <Responsive/>
+        {/* <Responsive/> */}
         {/* <Demo /> */}
         {/* <RoutePages /> */}
         <Footer />
